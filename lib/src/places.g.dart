@@ -9,7 +9,7 @@ part of 'places.dart';
 PlacesSearchResponse _$PlacesSearchResponseFromJson(Map<String, dynamic> json) {
   return PlacesSearchResponse(
     status: json['status'] as String,
-    errorMessage: json['error_message'] as String?,
+    errorMessage: json['errorMessage'] as String?,
     results: (json['results'] as List<dynamic>?)
             ?.map((e) => PlacesSearchResult.fromJson(e as Map<String, dynamic>))
             .toList() ??
@@ -26,7 +26,7 @@ Map<String, dynamic> _$PlacesSearchResponseToJson(
         PlacesSearchResponse instance) =>
     <String, dynamic>{
       'status': instance.status,
-      'error_message': instance.errorMessage,
+      'errorMessage': instance.errorMessage,
       'results': instance.results,
       'html_attributions': instance.htmlAttributions,
       'next_page_token': instance.nextPageToken,
@@ -135,7 +135,7 @@ PlaceDetails _$PlaceDetailsFromJson(Map<String, dynamic> json) {
   return PlaceDetails(
     adrAddress: json['adr_address'] as String?,
     name: json['name'] as String,
-    placeId: json['place_id'] as String,
+    placeId: json['place_id'] as String?,
     utcOffset: json['utc_offset'] as num?,
     id: json['id'] as String?,
     internationalPhoneNumber: json['international_phone_number'] as String?,
@@ -290,7 +290,7 @@ PlacesDetailsResponse _$PlacesDetailsResponseFromJson(
     Map<String, dynamic> json) {
   return PlacesDetailsResponse(
     status: json['status'] as String,
-    errorMessage: json['error_message'] as String?,
+    errorMessage: json['errorMessage'] as String?,
     result: PlaceDetails.fromJson(json['result'] as Map<String, dynamic>),
     htmlAttributions: (json['html_attributions'] as List<dynamic>?)
             ?.map((e) => e as String)
@@ -303,7 +303,7 @@ Map<String, dynamic> _$PlacesDetailsResponseToJson(
         PlacesDetailsResponse instance) =>
     <String, dynamic>{
       'status': instance.status,
-      'error_message': instance.errorMessage,
+      'errorMessage': instance.errorMessage,
       'result': instance.result,
       'html_attributions': instance.htmlAttributions,
     };
@@ -336,7 +336,7 @@ PlacesAutocompleteResponse _$PlacesAutocompleteResponseFromJson(
     Map<String, dynamic> json) {
   return PlacesAutocompleteResponse(
     status: json['status'] as String,
-    errorMessage: json['error_message'] as String?,
+    errorMessage: json['errorMessage'] as String?,
     predictions: (json['predictions'] as List<dynamic>?)
             ?.map((e) => Prediction.fromJson(e as Map<String, dynamic>))
             .toList() ??
@@ -348,7 +348,7 @@ Map<String, dynamic> _$PlacesAutocompleteResponseToJson(
         PlacesAutocompleteResponse instance) =>
     <String, dynamic>{
       'status': instance.status,
-      'error_message': instance.errorMessage,
+      'errorMessage': instance.errorMessage,
       'predictions': instance.predictions,
     };
 

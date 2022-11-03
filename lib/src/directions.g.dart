@@ -9,7 +9,7 @@ part of 'directions.dart';
 DirectionsResponse _$DirectionsResponseFromJson(Map<String, dynamic> json) {
   return DirectionsResponse(
     status: json['status'] as String,
-    errorMessage: json['error_message'] as String?,
+    errorMessage: json['errorMessage'] as String?,
     geocodedWaypoints: (json['geocoded_waypoints'] as List<dynamic>?)
             ?.map((e) => GeocodedWaypoint.fromJson(e as Map<String, dynamic>))
             .toList() ??
@@ -24,7 +24,7 @@ DirectionsResponse _$DirectionsResponseFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$DirectionsResponseToJson(DirectionsResponse instance) =>
     <String, dynamic>{
       'status': instance.status,
-      'error_message': instance.errorMessage,
+      'errorMessage': instance.errorMessage,
       'geocoded_waypoints': instance.geocodedWaypoints,
       'routes': instance.routes,
     };

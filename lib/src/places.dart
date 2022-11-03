@@ -652,7 +652,7 @@ class PlaceDetails {
   final List<Photo> photos;
 
   /// JSON place_id
-  final String placeId;
+  final String? placeId;
 
   /// JSON international_phone_number
   final String? internationalPhoneNumber;

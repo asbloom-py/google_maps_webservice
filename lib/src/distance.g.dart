@@ -9,7 +9,7 @@ part of 'distance.dart';
 DistanceResponse _$DistanceResponseFromJson(Map<String, dynamic> json) {
   return DistanceResponse(
     status: json['status'] as String,
-    errorMessage: json['error_message'] as String?,
+    errorMessage: json['errorMessage'] as String?,
     originAddresses: (json['origin_addresses'] as List<dynamic>?)
             ?.map((e) => e as String)
             .toList() ??
@@ -28,7 +28,7 @@ DistanceResponse _$DistanceResponseFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$DistanceResponseToJson(DistanceResponse instance) =>
     <String, dynamic>{
       'status': instance.status,
-      'error_message': instance.errorMessage,
+      'errorMessage': instance.errorMessage,
       'origin_addresses': instance.originAddresses,
       'destination_addresses': instance.destinationAddresses,
       'rows': instance.rows,

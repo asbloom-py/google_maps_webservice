@@ -9,7 +9,7 @@ part of 'geocoding.dart';
 GeocodingResponse _$GeocodingResponseFromJson(Map<String, dynamic> json) {
   return GeocodingResponse(
     status: json['status'] as String,
-    errorMessage: json['error_message'] as String?,
+    errorMessage: json['errorMessage'] as String?,
     results: (json['results'] as List<dynamic>?)
             ?.map((e) => GeocodingResult.fromJson(e as Map<String, dynamic>))
             .toList() ??
@@ -20,7 +20,7 @@ GeocodingResponse _$GeocodingResponseFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$GeocodingResponseToJson(GeocodingResponse instance) =>
     <String, dynamic>{
       'status': instance.status,
-      'error_message': instance.errorMessage,
+      'errorMessage': instance.errorMessage,
       'results': instance.results,
     };
 
